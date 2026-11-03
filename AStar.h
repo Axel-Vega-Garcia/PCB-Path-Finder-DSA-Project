@@ -1,0 +1,8 @@
+//
+// Created by thego on 11/3/2026.
+//
+
+#ifndef PCB_PATH_FINDER_DSA_PROJECT_ASTAR_H
+#define PCB_PATH_FINDER_DSA_PROJECT_ASTAR_H
+
+#endif //PCB_PATH_FINDER_DSA_PROJECT_ASTAR_H
