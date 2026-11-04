@@ -1,31 +1,11 @@
-//
-// Created by thego on 11/3/2026.
-//
+#pragma once
+#include "Grid.h"
+#include <utility>
+#include <cmath>
 
-#ifndef PCB_PATH_FINDER_DSA_PROJECT_ASTAR_H
-#define PCB_PATH_FINDER_DSA_PROJECT_ASTAR_H
+PathResult aStar(const Grid& grid, std::pair<int, int> start, std::pair<int, int> end);
 
-struct Node {
-    // Base fields for the project
-    int x;
-    int y;
-    bool isBlocked;
-    int movementCost;
-
-    // Specific variables for A* pathfinding
-    int gCost; // Cost from start node to this node: g(n)
-    int hCost; // Heuristic estimated cost to the destination: h(n)
-    Node* parent; // A pointer to a previous node to retrace the final path
-
-    // Helper function to get the total f(n) cost
-    int getFCost() const {
-        return gCost + hCost;
-    }
-
-    // Constructor for initialization
-    Node(int x_coord, int y_coord, bool blocked, int cost)
-        : x(x_coord), y(y_coord), isBlocked(blocked), movementCost(cost),
-          gCost(0), hCost(0), parent(nullptr) {}
-};
-
-#endif //PCB_PATH_FINDER_DSA_PROJECT_ASTAR_H
+// Heuristic: Manhattan distance for 4-directional movement
+inline int calculateHeuristic(int x1, int y1, int x2, int y2) {
+    return std::abs(x1 - x2) + std::abs(y1 - y2);
+}

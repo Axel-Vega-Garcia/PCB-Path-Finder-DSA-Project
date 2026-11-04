@@ -3,4 +3,4 @@ project(PCB_Path_Finder)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PCB_Path_Finder AStar.cpp AStar.h)
+add_executable(PCB_Path_Finder main.cpp AStar.cpp AStar.h Grid.h)
