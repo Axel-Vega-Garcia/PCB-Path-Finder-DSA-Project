@@ -1,0 +1,5 @@
+*.exe
+*.o
+/bin/
+/build/
+/dependencies/objects/
