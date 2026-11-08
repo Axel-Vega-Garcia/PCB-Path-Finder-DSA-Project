@@ -4,6 +4,7 @@
 #include <optional>
 
 class PCBView {
+    
 public:
     static constexpr unsigned WIDTH = 1440, HEIGHT = 960;
     PCBView();
@@ -11,6 +12,7 @@ public:
     void draw(sf::RenderTarget& target) const;
     const BoardModel& state() const { return model; }
     sf::Vector2i cellPixel(Position p, const sf::RenderTarget& target) const {return target.mapCoordsToPixel({p.first + .5f, p.second + .5f}, boardView);}
+
 private:
     BoardModel model;
     Tool tool = Tool::Start;
@@ -23,6 +25,7 @@ private:
     std::optional<sf::Mouse::Button> dragging;
     std::optional<Position> lastPaint;
     std::string input;
+    
     int radius = 3, cost = 5, chipWidth = 20, chipHeight = 20;
     bool dragged = false;
     float zoom = 1;
